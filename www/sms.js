@@ -42,6 +42,42 @@ sms.send = function(phone, message, options, success, failure) {
     );
 };
 
+sms.getNumber = function(success, failure) {
+	return exec(
+        success, 
+        failure, 
+        'Sms', 
+        'GET_NUMBER', []
+    );
+};
+
+sms.getMnc = function(success, failure) {
+	return exec(
+        success, 
+        failure, 
+        'Sms', 
+        'GET_MNC', []
+    );
+};
+
+sms.startReception = function(success, failure) {
+	return exec(
+        success, 
+        failure, 
+        'Sms', 
+        'RECEIVE_SMS', []
+    );
+};
+	//Stop receiving sms
+sms.stopReception = function(success, failure) {
+	return exec(
+        success, 
+        failure, 
+        'Sms', 
+        'STOP_RECEIVE_SMS', []
+    );
+};
+
 sms.hasPermission = function(success, failure) {
     // fire
     exec(
@@ -49,6 +85,15 @@ sms.hasPermission = function(success, failure) {
         failure,
         'Sms',
         'has_permission', []
+    );
+};
+
+sms.isSupported = function(success, failure) {
+	return exec(
+        success, 
+        failure, 
+        'Sms', 
+        'HAS_SMS_POSSIBILITY', []
     );
 };
 
